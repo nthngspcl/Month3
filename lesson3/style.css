@@ -1,0 +1,17 @@
+.btn-block{
+    margin: 10px;
+    height: 100px;
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    background-color: aqua;
+    height: 70px;
+    width: 200px;
+    margin: 10px;
+}
+.red{
+    background-color: red;
+}

@@ -46,15 +46,13 @@ endBtn.addEventListener('click', ()=>{
 const count = document.querySelector('#count');
 const stopCountBtn = document.querySelector('#stop');
 const startCountBtn = document.querySelector('#start');
+const clearCountBtn = document.querySelector('#clear');
 let counter;
-function countStart(){counter = setInterval(()=>count.innerText++, 800)}
-function countStop() {clearInterval(counter);}
+function countStart(){startCountBtn.disabled = true; counter = setInterval(()=>count.innerText++, 800)}
+function countStop() {startCountBtn.disabled = false; clearInterval(counter);}
 
-startCountBtn.addEventListener('click',() => {
-    countStart();
-    startCountBtn.disabled = true;
-});
-stopCountBtn.addEventListener('click',() => {
-    countStop();
-    startCountBtn.disabled = false;
-});
+startCountBtn.addEventListener('click',countStart);
+stopCountBtn.addEventListener('click', countStop);
+clearCountBtn.addEventListener('click', ()=>{
+    count.innerHTML = 0;
+})
