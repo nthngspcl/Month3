@@ -70,3 +70,29 @@ window.addEventListener('scroll', (event) => {
         openModal();
     }
 })
+
+const deadline = '2023-02-25'
+
+function getTimerRemaining(deadline) {
+    const t = new Date(deadline) - new Date(),
+    days = Math.floor((t/(1000 * 60 * 60 * 24))),
+    hours = Math.floor((t/(1000 * 60 * 60) % 24)),
+    minutes = Math.floor(((t/1000 * 60) % 60)),
+    seconds = Math.floor(((t/1000) % 60));
+    
+    return {
+        "total": t,
+        "days": days,
+        "hours": hours,
+        "minutes": minutes,
+        "seconds": seconds
+    }
+}
+
+function setClock(element, deadline){
+    const elem = document.querySelector(element),
+    days = elem.querySelector('#days'),
+    hours = elem.querySelector('#hours'),
+    minutes = elem.querySelector('#minutes'),
+    seconds = elem.querySelector('#seconds');
+}
