@@ -95,4 +95,5 @@ function setClock(element, deadline){
     hours = elem.querySelector('#hours'),
     minutes = elem.querySelector('#minutes'),
     seconds = elem.querySelector('#seconds');
+    setInterval(updateClock, 1000)
 }
