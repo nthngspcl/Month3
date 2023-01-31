@@ -18,10 +18,12 @@ btn.addEventListener("click",()=>{
     request.open("GET", "data.json");
     request.setRequestHeader("Content-type", "application/json");
     request.send();
+    console.log(typeof request);
     request.addEventListener("load",()=>{
         const data = JSON.parse(request.response);
         document.querySelector(".name").innerHTML = data.name;
         document.querySelector(".age").innerHTML = data.age;
+        console.log(typeof data);
         console.log(request);
     });
 })
